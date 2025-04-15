@@ -15,6 +15,12 @@ const app = express()
 app.use(express.json())
 app.use(compression())
 
+app.get('/', (req, res) => {
+  res.send(
+    'Hello from the test Node SSR app. Type in a /slug to render the banner'
+  )
+})
+
 app.get('/:hash', async (req: any, res: any) => {
   try {
     const jsonData = await getJSON(req.params.hash)
