@@ -4,9 +4,13 @@
     "module": "CommonJS",
     "esModuleInterop": true,
     "jsx": "react",
-    "allowImportingTsExtensions": true,
     "strict": true,
     "outDir": "dist"
   },
-  "include": ["**/*.ts"]
+  "include": [
+    "**/*.ts","**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules", "dist"
+  ]
 }

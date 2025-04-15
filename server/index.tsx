@@ -5,7 +5,7 @@ import compression from 'compression'
 import { renderToString } from 'react-dom/server'
 
 import { getJSON } from './utils/helpers'
-import Banner from './renderer/Banner.tsx'
+import Banner from './renderer/Banner'
 
 dotenvConfig()
 

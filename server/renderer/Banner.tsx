@@ -1,6 +1,6 @@
 import React from 'react'
 import { JsonDesign, JsonElement, JsonSlideOrElement } from '../utils/types'
-import Layer from './Layer.tsx'
+import Layer from './Layer'
 import { getBannerStyles } from '../utils/helpers'
 
 export default function Banner({ bannerData }: { bannerData: JsonDesign }) {

@@ -1,7 +1,7 @@
 import React from 'react'
-import { JsonElement } from '../utils/types.ts'
+import { JsonElement } from '../utils/types'
 import { getButtonStyles, getLayerStyles } from '../utils/helpers'
-import Text from './Text.tsx'
+import Text from './Text'
 
 export default function Layer({ layer }: { layer: JsonElement }) {
   const { layerType, properties } = layer

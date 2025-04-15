@@ -6,7 +6,7 @@ import {
   JsonElementProperties,
   JsonTextProperties,
   JsonTextSlateConfigChildren,
-} from './types.ts'
+} from './types'
 
 export function getJSON(hash: string) {
   return fetch(`${process.env.JSON_CDN}/${hash}/json`)

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon --watch './**/*.ts*' --exec 'ts-node' server/index.tsx",
-    "start": "npx ts-node server/index.tsx",
+    "start": "node dist/index.js",
+    "build": "tsc",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
