@@ -25,6 +25,9 @@ app.get('/:hash', async (req: any, res: any) => {
       <!DOCTYPE html>
       <html>
       <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;family=Passion%20One:wght@400">
         <title>Node SSR Test</title>
         <style>
           body { margin: 0; font-family: sans-serif; }

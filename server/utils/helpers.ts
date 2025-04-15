@@ -1,4 +1,12 @@
-import { JsonElementProperties, JsonTextProperties } from './types.ts'
+import React from 'react'
+import {
+  isJsonBackgroundSolid,
+  JsonButtonProperties,
+  JsonDesignProperties,
+  JsonElementProperties,
+  JsonTextProperties,
+  JsonTextSlateConfigChildren,
+} from './types.ts'
 
 export function getJSON(hash: string) {
   return fetch(`${process.env.JSON_CDN}/${hash}/json`)
@@ -20,17 +28,55 @@ export function getLayerStyles(properties: JsonElementProperties) {
   }
 }
 
-export function getTextStyles(properties: JsonTextProperties) {
+export function getTextStyles(
+  properties: JsonTextProperties
+): React.CSSProperties {
   return {
+    width: properties.width,
+    height: properties.height,
+    left: properties.x,
+    top: properties.y,
     lineHeight: properties.lineHeight,
     verticalAlign: properties.verticalAlign,
     fontSize: properties.fontSize,
     textAlign: properties.alignment,
+    position: 'absolute',
   }
 }
 
-// export function getSlideStyles(properties: JsonSlideProperties) {
-//   return {
-//     backgroundColor: properties.backgroundColor
-//   }
-// }
+export function getTextChildProperties(
+  properties: JsonTextSlateConfigChildren
+) {
+  return {
+    color: properties.color,
+    textDecoration: properties.textDecoration,
+    textTransform: properties.textTransform,
+    fontSize: properties.fontSize,
+    ...properties.fontSettings,
+  }
+}
+
+export function getBannerStyles(properties: JsonDesignProperties) {
+  return {
+    width: properties.width,
+    height: properties.height,
+    backgroundColor: isJsonBackgroundSolid(properties.backgroundColor)
+      ? properties.backgroundColor.scolor
+      : undefined,
+    borderColor: properties.backgroundColor?.borderColor,
+  }
+}
+
+export function getButtonStyles(properties: JsonButtonProperties) {
+  return {
+    borderColor: properties.border?.color,
+    backgroundColor: isJsonBackgroundSolid(properties.backgroundColor)
+      ? properties.backgroundColor.scolor
+      : undefined,
+    color: properties.labelStyle.color,
+    fontFamily: properties.labelStyle.fontFamily,
+    fontWeight: properties.labelStyle.fontWeight,
+    fontStyle: properties.labelStyle.fontStyle,
+    fontSize: properties.labelStyle.fontSize,
+  }
+}
