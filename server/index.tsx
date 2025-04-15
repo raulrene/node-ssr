@@ -9,7 +9,7 @@ import Banner from './renderer/Banner'
 
 dotenvConfig()
 
-const APP_PORT = process.env.APP_PORT || 3001
+const PORT = process.env.PORT || 3001
 
 const app = express()
 app.use(express.json())
@@ -46,6 +46,6 @@ app.get('/:hash', async (req: any, res: any) => {
   }
 })
 
-app.listen(APP_PORT, () => {
-  console.log(`Server running on port ${APP_PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 })
