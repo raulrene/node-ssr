@@ -26,6 +26,7 @@ export default function Banner({ bannerData }: { bannerData: JsonDesign }) {
   return (
     <div
       className="banner"
+      data-testid="banner"
       style={{ ...getBannerStyles(bannerData.properties) }}
     >
       {bannerUrl ? <a href={bannerUrl}>{renderLayers()}</a> : renderLayers()}
