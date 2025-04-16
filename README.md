@@ -30,6 +30,8 @@ Existing environment variables can be found in `.env`.
 
 By default it starts on `localhost:3001` and can be tested by accessing a route like `http://localhost:3001/j2308jq`
 
+For development please make sure you enable `Prettier` and `ESLint` plugins for your IDE in order to ensure a cohesive development process.
+
 ### Production mode
 `npm run build && npm start` - this will create a `/dist` directory and run the server from there
 
