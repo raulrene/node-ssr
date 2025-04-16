@@ -21,6 +21,11 @@ app.get('/', (req, res) => {
   )
 })
 
+// No-content handler for favicon s.t. it doesn't end up in the /:hash route
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end()
+})
+
 app.get('/:hash', async (req: any, res: any) => {
   try {
     const jsonData = await getJSON(req.params.hash)
